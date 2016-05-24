@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace WebApplication_PartyInvites
+namespace PartyInvites
 {
     public class MvcApplication : System.Web.HttpApplication
     {
