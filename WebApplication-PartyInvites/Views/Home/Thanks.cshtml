@@ -12,6 +12,22 @@
     <title>Thanks</title>
 </head>
 <body>
+    @{ 
+        try
+        {
+            WebMail.SmtpServer = "smtp.googlemail.com";
+            WebMail.SmtpPort = 465;
+            WebMail.EnableSsl = true;
+            WebMail.UserName = "forbackup2011@gmail.com";
+            WebMail.Password = "goga;backup";
+            WebMail.From = "forbackup@gmail.com";
+            WebMail.Send("stepanov.g@hotmail.com", "RSVP notification", Model.Name + " is " + ((Model.WillAttend ?? false) ? " " : "not") + "attending");
+        }
+        catch (Exception)
+        {
+            @:<b> Sorry - we couldn't send the email to confirm your RSVP.</b>
+        }
+    }
     <div> 
         <h1>Спасибо, @Model.Name!</h1>
         @if (Model.WillAttend == true)
